@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shared.Entities;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -7,13 +8,11 @@ namespace PresentationLayerWinForm
     public partial class Form1 : Form
     {
         // Intefaz que se utilizara
-        private BusinessLogicLayer.IBLEmployees IEmp = new BusinessLogicLayer.BLEmployees(metodos);
-        // Metodos de implementacion que se utilizara
-        private static DataAccessLayer.DALEmployeesMongo metodos = new DataAccessLayer.DALEmployeesMongo();
+        private ServiceLayer.IServiceEmployees IEmp = new ServiceLayer.ServiceEmployees();
         public Form1()
         {
             InitializeComponent();
-            List<Shared.Entities.Employee> lista = IEmp.GetAllEmployees();
+            List<Employee> lista = IEmp.GetAllEmployees();
 
             listView1.Items.Clear();
 
@@ -23,7 +22,7 @@ namespace PresentationLayerWinForm
                 item = new ListViewItem(emp.Id.ToString());
                 item.SubItems.Add(emp.Name);
                 item.SubItems.Add(emp.StartDate.ToString());
-                if (emp.GetType() == typeof(Shared.Entities.FullTimeEmployee))
+                if (emp.GetType() == typeof(FullTimeEmployee))
                     item.SubItems.Add("Mensual");
                 else
                     item.SubItems.Add("Jornalero");
@@ -35,7 +34,7 @@ namespace PresentationLayerWinForm
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            List<Shared.Entities.Employee> lista = IEmp.GetAllEmployees();
+            List<Employee> lista = IEmp.GetAllEmployees();
 
             listView1.Items.Clear();
 

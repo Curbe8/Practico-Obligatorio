@@ -38,8 +38,8 @@ namespace ServiceLayer
             serviceHost.AddServiceEndpoint(typeof(IServiceEmployees), binding, address);
             serviceHost.Open();
 
-            Console.WriteLine("The service is ready.");
-            Console.WriteLine("Press <ENTER> to terminate service.");
+            Console.WriteLine("El servicio esta listo.");
+            Console.WriteLine("Precionar <ENTER> para finalizar el servicio.");
             Console.WriteLine();
             Console.ReadLine();
 

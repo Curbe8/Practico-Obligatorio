@@ -20,7 +20,7 @@ namespace ServiceLayer
 
         public void AddEmployee(Employee emp)
         {
-            blHandler.AddEmployee(emp)
+            blHandler.AddEmployee(emp);
         }
 
         public void DeleteEmployee(int id)
