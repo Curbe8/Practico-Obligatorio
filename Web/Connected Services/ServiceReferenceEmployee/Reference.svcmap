@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b67e2737-3f8f-4d7a-a16f-75a0fd8a02ff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8834/tsi1/?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="88114827-e48b-4d5c-999b-5aad81792c1d" SourceId="1" SourceUrl="http://localhost:8834/tsi1/?wsdl=wsdl0" />
+    <MetadataFile FileName="ServiceEmployees.wsdl" MetadataType="Wsdl" ID="4ea49a75-524b-47d0-b2a8-3ea4c342298f" SourceId="1" SourceUrl="http://localhost:8834/tsi1/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="88e65377-e1e6-48b3-90f2-ec9bff31ec9c" SourceId="1" SourceUrl="http://localhost:8834/tsi1/?xsd=xsd2" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="f996c634-ddb0-444d-b7a3-86b9ad0f89a0" SourceId="1" SourceUrl="http://localhost:8834/tsi1/?xsd=xsd0" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="44f5d8dc-2f94-4460-a316-3a0370927472" SourceId="1" SourceUrl="http://localhost:8834/tsi1/?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

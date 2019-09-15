@@ -9,31 +9,41 @@ namespace ApiServices.Controllers
 {
     public class EmployeeController : ApiController
     {
+        private BusinessLogicLayer.IBLEmployees IEmp = new BusinessLogicLayer.BLEmployees(metodos);
+        private static DataAccessLayer.DALEmployeesMongo metodos = new DataAccessLayer.DALEmployeesMongo();
         // GET api/<controller>
-        public IEnumerable<string> Get()
+        public List<Shared.Entities.Employee> Get()
         {
-            return new string[] { "value1", "value2" };
+            return IEmp.GetAllEmployees();
         }
 
         // GET api/<controller>/5
-        public string Get(int id)
+        public Shared.Entities.Employee Get(int id)
         {
-            return "value";
+            return IEmp.GetEmployee(id);
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Shared.Entities.Employee emp)
         {
+            IEmp.AddEmployee(emp);
         }
 
         // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(Shared.Entities.Employee emp)
         {
+            IEmp.UpdateEmployee(emp);
         }
 
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            IEmp.DeleteEmployee(id);
+        }
+
+        public double CalcSalary(int id, int hours)
+        {
+            return IEmp.CalcPartTimeEmployeeSalary(id, hours);
         }
     }
 }

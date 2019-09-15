@@ -9,6 +9,7 @@ namespace PresentationLayerWinForm
     {
         // Intefaz que se utilizara
         private ServiceLayer.IServiceEmployees IEmp = new ServiceLayer.ServiceEmployees();
+
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +29,21 @@ namespace PresentationLayerWinForm
                     item.SubItems.Add("Jornalero");
                 listView1.Items.Add(item);
             });
+            //ServiceReferenceEmployee.Employee[] lista = IEmp.GetAllEmployees();
+            //System.Collections.IEnumerator it = lista.GetEnumerator();
+
+            //while (it.Current != null)
+            //{
+            //    ServiceReferenceEmployee.Employee emp = (ServiceReferenceEmployee.Employee)it.Current;
+            //    item = new ListViewItem(emp.Id.ToString());
+            //    item.SubItems.Add(emp.Name);
+            //    item.SubItems.Add(emp.StartDate.ToString());
+            //    if (emp.GetType() == typeof(FullTimeEmployee))
+            //        item.SubItems.Add("Mensual");
+            //    else
+            //        item.SubItems.Add("Jornalero");
+            //    listView1.Items.Add(item);
+            //}
             buttonCancelar.Visible = false;
             buttonModificar.Visible = false;
         }
