@@ -19,32 +19,43 @@ namespace BusinessLogicLayer
 
         public void AddEmployee(Employee emp)
         {
-            throw new NotImplementedException();
+            this._dal.AddEmployee(emp);
         }
 
         public void DeleteEmployee(int id)
         {
-            throw new NotImplementedException();
+            this._dal.DeleteEmployee(id);
         }
 
         public void UpdateEmployee(Employee emp)
         {
-            throw new NotImplementedException();
+            this._dal.UpdateEmployee(emp);
         }
 
         public List<Employee> GetAllEmployees()
         {
-            throw new NotImplementedException();
+            return this._dal.GetAllEmployees();
         }
 
         public Employee GetEmployee(int id)
         {
-            throw new NotImplementedException();
+            return this._dal.GetEmployee(id);
         }
 
         public double CalcPartTimeEmployeeSalary(int idEmployee, int hours)
         {
-            throw new NotImplementedException();
+            Employee emp = this._dal.GetEmployee(idEmployee);
+            if(emp != null && emp.GetType() == typeof(PartTimeEmployee))
+            {
+                PartTimeEmployee partTime = (PartTimeEmployee)emp;
+                return hours * partTime.HourlyRate;
+            } else
+            {
+                if(emp == null)
+                    throw new NullReferenceException();
+                else
+                    throw new InvalidCastException();
+            }
         }
     }
 }

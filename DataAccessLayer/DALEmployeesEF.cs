@@ -70,6 +70,9 @@ namespace DataAccessLayer
             List<Employee> retorno = new List<Employee>();
             using (Model.ObligatorioEntities en = new Model.ObligatorioEntities())
             {
+                List<Model.Employee> emps = en.Employee.ToList();
+                if (emps.Count < 1)
+                    return retorno;
                 en.Employee.ToList().ForEach(emp =>
                 {
                     Employee nuevo = null;

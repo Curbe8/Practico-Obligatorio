@@ -64,11 +64,10 @@
                 <Condition ColumnName="TYPE_EMP" Value="1" />
               </MappingFragment>
             </EntityTypeMapping>
-            <EntityTypeMapping TypeName="IsTypeOf(ObligatorioModel.PartTimeEmployee)">
+            <EntityTypeMapping TypeName="ObligatorioModel.PartTimeEmployee">
               <MappingFragment StoreEntitySet="Employee">
                 <ScalarProperty Name="EMP_ID" ColumnName="EMP_ID" />
                 <ScalarProperty Name="RATE" ColumnName="RATE" />
-                <Condition ColumnName="TYPE_EMP" Value="0" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
